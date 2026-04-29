@@ -1,6 +1,6 @@
 # Kumar Reddy N — Full Stack Developer
 
-This repository serves as both a GitHub Pages portfolio and a searchable resume for recruiters and freelance clients.
+![Kumar Reddy N](assets/images/kumar_photo_avatar.png)
 
 ---
 
