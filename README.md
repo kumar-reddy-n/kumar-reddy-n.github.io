@@ -1,6 +1,6 @@
 # Kumar Reddy N — Full Stack Developer
 
-![Kumar Reddy N](assets/images/kumar_photo_avatar.png)
+<img src="assets/images/kumar_photo_avatar.png" alt="Kumar Reddy N" width="220" />
 
 ---
 

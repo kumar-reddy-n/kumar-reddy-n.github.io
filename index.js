@@ -47,3 +47,57 @@ navLinks.forEach(link => {
     mainNav.classList.remove('open');
   });
 });
+
+const typingHeading = document.querySelector('.typing-heading');
+if (typingHeading) {
+  const text = 'Hi, I’m Kumar.';
+  let charIndex = 0;
+
+  const updateTyping = () => {
+    typingHeading.textContent = text.slice(0, charIndex);
+    if (charIndex <= text.length) {
+      charIndex += 1;
+      setTimeout(updateTyping, 90);
+    } else {
+      setTimeout(() => {
+        typingHeading.classList.add('typing-complete');
+      }, 1200);
+    }
+  };
+
+  updateTyping();
+}
+
+const revealSections = document.querySelectorAll('.section.reveal');
+if (revealSections.length) {
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('visible');
+      obs.unobserve(entry.target);
+    });
+  }, {
+    threshold: 0.15,
+  });
+
+  revealSections.forEach(section => observer.observe(section));
+}
+
+const scrollTopButton = document.querySelector('.scroll-top');
+if (scrollTopButton) {
+  const updateScrollButton = () => {
+    if (window.scrollY > 300) {
+      scrollTopButton.classList.add('visible');
+    } else {
+      scrollTopButton.classList.remove('visible');
+    }
+  };
+
+  scrollTopButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  window.addEventListener('scroll', updateScrollButton);
+  updateScrollButton();
+}
+
